@@ -17,8 +17,12 @@ const userImputsElm = document.getElementsByClassName('user-imputs')
 
 //DOM Events
 /* Visualizzare in pagina 5 numeri casuali */
+const randomNumbers = []
+
 for (let i = 0; i < randomElm.length; i++) {
-    randomElm[i].innerHTML = getRndInteger(1, 100);
+    const randomValue = getRndInteger(1, 100)
+    randomElm[i].innerHTML = randomValue
+    randomNumbers.push(randomValue)
   }
 
 /* Partenza timer */
@@ -37,3 +41,6 @@ const intervalID = setInterval(() =>{
 
     seconds--
 }, 1000)
+
+/* Confrontare quali e quanti numeri corrispondono */ 
+
