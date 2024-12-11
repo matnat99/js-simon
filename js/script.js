@@ -44,14 +44,15 @@ const intervalID = setInterval(() =>{
 }, 1000)
 
 /* Estrarre i valori dagli imput utente */ 
-submitterElm.addEventListener('click',() =>{
+submitterElm.addEventListener('click',(event) =>{
     event.preventDefault()
-    const userNumbers = [];
+    const userNumbers = []
+    let isValid = true
 
     for (let i = 0; i < userInputsElm.length; i++) {
-        const userNumbervalue = parseInt(userInputsElm[i].value);
+        const userNumbervalue = parseInt(userInputsElm[i].value)
         if (!isNaN(userNumbervalue)) { 
-            userNumbers.push(userNumbervalue);
+            userNumbers.push(userNumbervalue)
         }
     }
 
@@ -59,10 +60,10 @@ submitterElm.addEventListener('click',() =>{
     const correctNumbers = [];
     for (let i = 0; i < userNumbers.length; i++) {
         if (randomNumbers.includes(userNumbers[i])) {
-            correctNumbers.push(userNumbers[i]);
+            correctNumbers.push(userNumbers[i])
         }
 }
-const resultElm = document.getElementById('result');
+const resultElm = document.getElementById('result')
 resultElm.innerHTML = `Hai indovinato ${correctNumbers.length} numeri! (${correctNumbers.join(', ')})`
 })
 
