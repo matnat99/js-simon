@@ -12,8 +12,9 @@ const pElm = document.getElementById('p')
 const randomGroupElm = document.getElementById('random-group')
 const randomElm = document.getElementsByClassName('random')
 const inputGroupElm = document.getElementById('input-group')
+const submitterElm = document.getElementById('submitter')
 //Form Fields
-const userImputsElm = document.getElementsByClassName('user-imputs')
+const userInputsElm = document.getElementsByClassName('user-imputs')
 
 //DOM Events
 /* Visualizzare in pagina 5 numeri casuali */
@@ -26,7 +27,7 @@ for (let i = 0; i < randomElm.length; i++) {
   }
 
 /* Partenza timer */
-let seconds = 5
+let seconds = 30
 
 const intervalID = setInterval(() =>{
     if(seconds === -1){
@@ -42,5 +43,29 @@ const intervalID = setInterval(() =>{
     seconds--
 }, 1000)
 
-/* Confrontare quali e quanti numeri corrispondono */ 
+/* Estrarre i valori dagli imput utente */ 
+submitterElm.addEventListener('click',() =>{
+    event.preventDefault()
+    const userNumbers = [];
+
+    for (let i = 0; i < userInputsElm.length; i++) {
+        const userNumbervalue = parseInt(userInputsElm[i].value);
+        if (!isNaN(userNumbervalue)) { 
+            userNumbers.push(userNumbervalue);
+        }
+    }
+
+    /* Confrontare quali e quanti numeri corrispondono */
+    const correctNumbers = [];
+    for (let i = 0; i < userNumbers.length; i++) {
+        if (randomNumbers.includes(userNumbers[i])) {
+            correctNumbers.push(userNumbers[i]);
+        }
+}
+const resultElm = document.getElementById('result');
+resultElm.innerHTML = `Hai indovinato ${correctNumbers.length} numeri! (${correctNumbers.join(', ')})`
+})
+
+
+
 
