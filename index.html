@@ -8,8 +8,8 @@
   </head>
   <body style="background-color:beige;">
     <div class="container text-center mt-5">
-        <form id="form">
-            <h1 id="timer">0</h1>
+        
+        <h1 id="timer">0</h1>
         <p id="p">Cerca di memorizzare tutti i numeri</p>
 
         <div id="random-group" class="row justify-content-center mb-3">
@@ -19,29 +19,31 @@
             <div class="col-2 random">-</div>
             <div class="col-2 random">-</div>
         </div>
-
-        <div id="input-group" class="row justify-content-center mb-3 d-none">
-          <div class="col-2">
-            <input type="text" class="form-control user-imputs">
-          </div>
-          <div class="col-2">
-            <input type="text" class="form-control user-imputs">
-          </div>
-          <div class="col-2">
-            <input type="text" class="form-control user-imputs">
-          </div>
-          <div class="col-2">
-            <input type="text" class="form-control user-imputs">
-          </div>
-          <div class="col-2">
-            <input type="text" class="form-control user-imputs">
-          </div>
-        </div>
-
-        <button id="submitter" class="btn btn-primary">Conferma</button>
-        <div id="result"></div>
+        
+        <form id="form">
+            <div id="input-group" class="row justify-content-center mb-3 d-none">
+              <div class="col-2">
+                <input type="number" class="form-control user-imputs" min="1" max="100" required>
+              </div>
+              <div class="col-2">
+                <input type="number" class="form-control user-imputs" min="1" max="100" required>
+              </div>
+              <div class="col-2">
+                <input type="number" class="form-control user-imputs" min="1" max="100" required>
+              </div>
+              <div class="col-2">
+                <input type="number" class="form-control user-imputs" min="1" max="100" required>
+              </div>
+              <div class="col-2">
+                <input type="number" class="form-control user-imputs" min="1" max="100" required>
+              </div>
+            </div>
+    
+            <button id="submitter" class="btn btn-primary">Conferma</button>
+            <div id="result"></div>
         </form>
     </div>
+    <script src="functions/script.js"></script>
    <script src="js/script.js"></script>
   </body>
 </html>
